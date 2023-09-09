@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 requirements = []
 with open('requirements.txt') as f:
@@ -17,6 +17,7 @@ setup(
     description='A Discord Bot for Pokemon Go Communities.',
     long_description=readme,
     include_package_data=True,
+    packages=find_packages(),#["meowth", "meowth.core"],#, "meowth.exts", "meowth.fonts", "meowth.images", "meowth.utils"],
 
     install_requires=requirements,
 

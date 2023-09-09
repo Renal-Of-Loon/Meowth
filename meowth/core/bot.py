@@ -106,6 +106,8 @@ class Bot(commands.AutoShardedBot):
                 f"The database '{db_name}' was not found. "
                 "Please fix the config file and try again.")
             sys.exit(0)
+
+        await self.dbi.core_tables_exist()
         prefix_table = self.dbi.table('prefixes')
         results = await prefix_table.query.get()
         self.prefixes = dict(results)
